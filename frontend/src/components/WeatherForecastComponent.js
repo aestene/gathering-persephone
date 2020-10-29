@@ -25,8 +25,8 @@ export default function BasicTable() {
           <div className="cloud_icon"><CloudIcon style={{ color: 'gray'}}/></div>
           <div className="sun_icon"> <WbSunnyIcon style={{ color: '#e6e600'}}/></div>
         </td>
-        <td className="cloud_icon">
-          <div><CloudIcon style={{ color: 'gray'}}/></div>
+        <td className="weather-forecast-values">
+          <div className="cloud_icon"><CloudIcon style={{ color: 'gray'}}/></div>
           <div className="rain_icon"> <GrainIcon style={{ color: '#72bcd4'}}/></div>
         </td>
       </tr>
