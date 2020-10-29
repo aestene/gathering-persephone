@@ -3,11 +3,13 @@ import os
 
 _WEATHER_FORECAST_ENDPOINT = "https://api.met.no/weatherapi/locationforecast/2.0/"
 
+
 class YrClient:
     """
     Simple thin client for retrieving data from the YR end points.
     Returns the request response objects in full
     """
+
     def __init__(self):
         pass
 
