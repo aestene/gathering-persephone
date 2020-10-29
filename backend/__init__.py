@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restx import Api
-from backend.apis.example_namespace import api as example_api
+from apis.example_namespace import api as example_api
 
 
 def create_app():
