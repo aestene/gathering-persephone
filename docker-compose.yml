@@ -1,10 +1,10 @@
 version: '3'
-services: 
+services:
     api:
-      build: .
-      ports: 
+      build: backend
+      ports:
         - "8000:8000"
     web-ui:
       build: ./frontend
-      ports: 
-        - "3000:3000" 
+      ports:
+        - "3000:3000"
