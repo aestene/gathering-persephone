@@ -20,6 +20,8 @@ spec:
         - name: http
           port: 3000
       publicPort: http
+      secrets: 
+        - GOOGLE_API_KEY
   dnsAppAlias:
     environment: prod
     component: server
