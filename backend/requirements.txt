@@ -2,3 +2,4 @@ flask
 pytest
 pytest-mock
 requests
+flask-restx
