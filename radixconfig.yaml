@@ -8,14 +8,14 @@ spec:
       build:
         from: master
   components:
-    - name: server
-      src: "."
+    - name: backend
+      src: backend
       ports:
        - name: http
          port: 8000
       publicPort: http
     - name: frontend
-      src: "./frontend"
+      src: frontend
       ports:
         - name: http
           port: 3000
