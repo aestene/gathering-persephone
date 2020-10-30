@@ -1,0 +1,45 @@
+.weather-forecast-table{
+    border: solid 1px;
+    background-size: 929px 392px;
+    width: 100%;
+    background-color:rgb(235, 235, 235);
+    
+        .weather-forecast-label{
+            width: 20%;
+            padding-left: 10px;
+        }
+            
+        .weather-forecast-values{
+            // width: 80px;
+            padding-left: 10px;
+        }
+    
+        .weather-forecast-icons {
+           padding-left: 20px;
+           padding-right: 10px;
+        }
+    
+        .sun_cloud_icon{
+            position: relative;
+        }
+    
+        .sun_icon{
+            position: absolute;
+            margin-left: 12px;
+            top: 85px;
+        }
+    
+        .cloud_icon{
+            position: relative;
+        }
+    
+        .rain_icon {
+            position: absolute;
+            margin-left: 3px;
+            top: 90px;
+        }
+
+        .header{
+            font-size: 15px;
+        }
+    }
