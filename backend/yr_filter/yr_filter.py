@@ -17,3 +17,17 @@ class YrFilter:
         ]
 
         return temperature
+
+    def get_compact_forecast(self, latitude: float, longitude: float):
+        binary_data = self.yr_client.compact_forecast(
+            {"lat": latitude, "lon": longitude}
+        )
+        data = json.loads(binary_data.content.decode())
+
+        pick = [0, 3, 6, 12]
+        forecast = []
+        for index in pick:
+            entry = data["properties"]["timeseries"][index]
+            forecast.append({entry["time"]: entry["data"]["instant"]})
+
+        return forecast
