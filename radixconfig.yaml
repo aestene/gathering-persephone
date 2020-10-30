@@ -4,9 +4,12 @@ metadata:
   name: gathering-persephone
 spec:
   environments:
-    - name: prod
+    - name: dev
       build:
         from: master
+    - name: prod
+      build:
+        from: prod
   components:
     - name: backend
       src: backend
