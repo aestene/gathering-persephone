@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_restx import Api
-from apis.example_namespace import api as example_api
 from apis.weather import api as weather_api
 
 
@@ -14,7 +13,6 @@ def create_app():
     app = Flask(__name__)
     api.init_app(app)
 
-    api.add_namespace(example_api)
     api.add_namespace(weather_api, path="/persephone/weather")
 
     return app
