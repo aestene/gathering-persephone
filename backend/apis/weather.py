@@ -27,8 +27,10 @@ class CurrentTemperature(Resource):
         temperature = yr_filter.get_current_temperature(longitude, latitude)
         return temperature
 
+
 @api.route(
-    "/compact-forecast", doc={"description": "Returns a compact weather forecast for four timepoints"}
+    "/compact-forecast",
+    doc={"description": "Returns a compact weather forecast for four timepoints"},
 )
 @api.doc(
     params={
@@ -48,7 +50,8 @@ class CompactForecast(Resource):
 
 
 @api.route(
-    "/compact-forecast_icon", doc={"description": "Returns a compact weather forecast icons for four timepoints"}
+    "/compact-forecast_icon",
+    doc={"description": "Returns a compact weather forecast icons for four timepoints"},
 )
 @api.doc(
     params={
