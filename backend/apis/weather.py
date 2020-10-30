@@ -9,7 +9,7 @@ api = Namespace(
 
 
 @api.route(
-    "/current-temperature", doc={"description": "Ask the API to say hello to the world"}
+    "/current-temperature", doc={"description": "provides the current temperature"}
 )
 @api.doc(
     params={
