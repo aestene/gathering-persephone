@@ -1,6 +1,7 @@
 import pytest
 
 from backend import create_app
+from yr_filter.yr_filter import YrFilter
 
 
 @pytest.fixture()
@@ -14,3 +15,8 @@ def test_client():
     ctx.push()
     yield testing_client
     ctx.pop()
+
+
+@pytest.fixture()
+def yr_filter() -> YrFilter:
+    return YrFilter()
