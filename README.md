@@ -22,6 +22,16 @@ cd frontend
 docker build -t <name> .
 docker run -p 3000:3000 <name>
 ```
+
+## What we have achieved:
+- [x] Authentication
+- [x] Unit tests
+- [x] Equinor API strategy
+- [x] code review
+- [x] Alot of pair programming
+- [x] Social activities
+- [ ] EDS components
+
 Project Detail:
 
 | > | v| 
