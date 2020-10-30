@@ -9,7 +9,7 @@ export default function BasicTable() {
 
   return (
     <table className="weather-forecast-table" border='1'>
-        <h3 className="header">Weather Forcast //Place Name//</h3>
+        <h3 className="header">Weather Forecast //Place Name//</h3>
       <tr>
         <td className="weather-forecast-label">Hours</td>
         <td className="weather-forecast-values">6</td>
