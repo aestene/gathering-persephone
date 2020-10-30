@@ -11,6 +11,45 @@ spec:
       build:
         from: prod
   components:
+    - name: auth-proxy
+      image: quay.io/pusher/oauth2_proxy:latest
+      publicPort: http
+      secrets:
+        - OAUTH2_PROXY_CLIENT_SECRET
+        - OAUTH2_PROXY_COOKIE_SECRET
+      ports:
+        - name: http
+          port: 8080
+      publicPort: http
+      environmentConfig:
+        - environment: dev
+          variables:
+            OAUTH2_PROXY_PROVIDER: "oidc"
+            OAUTH2_PROXY_OIDC_ISSUER_URL: "https://login.microsoftonline.com/3aa4a235-b6e2-48d5-9195-7fcf05b459b0/v2.0"
+            OAUTH2_PROXY_CLIENT_ID: "PrsVI4ms~-YptXXVQTjRfr8YL3.2j_RdI"
+            OAUTH2_PROXY_SCOPE: openid User.Read https://graph.microsoft.com/User.Read email
+            OAUTH2_PROXY_REDIRECT_URL: "https://auth-proxy-persephone-dev.playground.radix.equinor.com/oauth2/callback"
+            OAUTH2_PROXY_HTTP_ADDRESS: "http://:8080"
+            OAUTH2_PROXY_UPSTREAMS: "http://frontend:3000"
+            OAUTH2_PROXY_COOKIE_REFRESH: "60m"
+            OAUTH2_PROXY_COOKIE_SECURE: "true"
+            OAUTH2_PROXY_EMAIL_DOMAINS: "*"
+            OAUTH2_PROXY_PASS_AUTHORIZATION_HEADER: "true"
+            OAUTH2_PROXY_SKIP_PROVIDER_BUTTON: "true"
+        - environment: prod
+          variables:
+            OAUTH2_PROXY_PROVIDER: "oidc"
+            OAUTH2_PROXY_OIDC_ISSUER_URL: "https://login.microsoftonline.com/3aa4a235-b6e2-48d5-9195-7fcf05b459b0/v2.0"
+            OAUTH2_PROXY_CLIENT_ID: "PrsVI4ms~-YptXXVQTjRfr8YL3.2j_RdI"
+            OAUTH2_PROXY_SCOPE: openid User.Read https://graph.microsoft.com/User.Read email
+            OAUTH2_PROXY_REDIRECT_URL: "https://auth-proxy-persephone-prod.playground.radix.equinor.com/oauth2/callback"
+            OAUTH2_PROXY_HTTP_ADDRESS: "http://:8080"
+            OAUTH2_PROXY_UPSTREAMS: "http://frontend:3000"
+            OAUTH2_PROXY_COOKIE_REFRESH: "60m"
+            OAUTH2_PROXY_COOKIE_SECURE: "true"
+            OAUTH2_PROXY_EMAIL_DOMAINS: "*"
+            OAUTH2_PROXY_PASS_AUTHORIZATION_HEADER: "true"
+            OAUTH2_PROXY_SKIP_PROVIDER_BUTTON: "true"
     - name: backend
       src: backend
       ports:
@@ -23,8 +62,6 @@ spec:
         - name: http
           port: 3000
       publicPort: http
-      secrets: 
-        - GOOGLE_API_KEY
   dnsAppAlias:
     environment: prod
     component: frontend

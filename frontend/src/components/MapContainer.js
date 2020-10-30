@@ -11,10 +11,10 @@ export class MapContainer extends Component{
       super(props);
 
       this.state = {
-        stores: [{ latitude: 48.00, longitude: -122.176}]
+        stores: [{ latitude: 60.39, longitude: 5.32}]
       }
     }
-    
+
     displayMarkers = () => {
       return this.state.stores.map((store, index) => {
         return <Marker key={index} id={index} position={{
