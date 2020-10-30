@@ -1,4 +1,5 @@
-# SI Gathering Challenge: Template
+# Weather map
+![Github Actions CI](https://github.com/equinor/gathering-persephone/workflows/Python%20application/badge.svg)
 
 ## Running the project locally
 The easiest way to run the project is using docker-compose. Ensure docker and docker-compose has already been installed.
