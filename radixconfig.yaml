@@ -22,4 +22,4 @@ spec:
       publicPort: http
   dnsAppAlias:
     environment: prod
-    component: server
+    component: frontend
