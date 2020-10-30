@@ -21,3 +21,20 @@ cd frontend
 docker build -t <name> .
 docker run -p 3000:3000 <name>
 ```
+Project Detail:
+
+| > | v| 
+|---|---|
+Project | Weather Forecast
+
+
+Team Detail:
+| > | v| 
+|---|---|
+1 | Arnt Erik Stene
+2 | Aisha AKram
+3 | Haoyuan Zhang
+4 | Li Deng
+5 | Kristian Reed
+6 | Lars Petter Øren Hauge
+7 | Shikha Mishra
