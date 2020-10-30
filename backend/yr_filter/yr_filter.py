@@ -31,3 +31,17 @@ class YrFilter:
             forecast.append({entry["time"]: entry["data"]["instant"]})
 
         return forecast
+
+    def get_compact_forecast_icon(self, latitude: float, longitude: float):
+        binary_data = self.yr_client.compact_forecast(
+            {"lat": latitude, "lon": longitude}
+        )
+        data = json.loads(binary_data.content.decode())
+
+        pick = [0, 3, 6, 12]
+        forecast = []
+        for index in pick:
+            entry = data["properties"]["timeseries"][index]
+            forecast.append({entry["time"]: entry["data"]["next_1_hours"]["summary"]})
+
+        return forecast
